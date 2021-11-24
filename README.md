@@ -13,7 +13,7 @@ Steps to run this application using docker:
 
 Swagger UI 
 ------------
-Swagger UI with documentation of the available APIs will be avaialble at localhost:8080/swagger-ui.html
+Swagger UI with documentation of the available APIs will be avaialble at http://localhost:8080/swagger-ui.html
 
 APIs and URLs
 -------------
