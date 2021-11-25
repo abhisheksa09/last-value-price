@@ -66,15 +66,11 @@ public class FinancialInstrumentServiceImpl implements FinancialInstrumentServic
      * @return true if the specified details are valid, false otherwise
      */
     private boolean isFinancialInstrumentInfoInValid(final FinancialInstrumentDTO financialInstrumentDTO) {
-        return false;
-        /*return financialInstrumentDTO == null ||
-                financialInstrumentDTO.getLastName() == null ||
-                financialInstrumentDTO.getLastName().isEmpty() ||
-                financialInstrumentDTO.getLocation() == null ||
-                financialInstrumentDTO.getLocation().isEmpty() ||
-                financialInstrumentDTO.getOutletName() == null ||
-                financialInstrumentDTO.getOutletName().isEmpty() ||
-                financialInstrumentDTO.getOutletType() == null ||
-                financialInstrumentDTO.getOutletType().isEmpty();*/
+                return financialInstrumentDTO == null ||
+                financialInstrumentDTO.getId() == null ||
+                financialInstrumentDTO.getId().isEmpty() ||
+                financialInstrumentDTO.getAsOf() == null ||
+                financialInstrumentDTO.getPayLoad() == null ||
+                financialInstrumentDTO.getPayLoad().isEmpty();
     }
 }
