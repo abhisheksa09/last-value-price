@@ -35,7 +35,7 @@ public class FileUploadController {
     private static final Logger LOG = Logger.getLogger(FileUploadController.class);
 
     @PostMapping("/instruments")
-    public void processFileUpload(@RequestParam("file") final MultipartFile file) {
+    public synchronized void processFileUpload(@RequestParam("file") final MultipartFile file) {
 
         if(!isFileValid(file)){
             throw new InvalidRequestException("Provided CSV file is invalid.");
@@ -52,7 +52,7 @@ public class FileUploadController {
     }
 
     @GetMapping("/instruments/{id}")
-    public ResponseEntity<FinancialInstrument> getPriceById(@PathVariable("id") String id) {
+    public synchronized ResponseEntity<FinancialInstrument> getPriceById(@PathVariable("id") String id) {
 
         Optional<FinancialInstrument> instrumentData = financialInstrumentService.findInstrumentById(id);
         if (instrumentData.isPresent()) {
